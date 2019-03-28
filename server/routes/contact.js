@@ -7,10 +7,7 @@ let router = express.Router();
 let mongoose = require('mongoose');
 let contactModel = require('../models/contact');
 
-/* Contact Index page. */
-router.get('/', function(req, res, next) {
-    res.render('contact/index', { title: 'Contact' });
-  });
+
 
 // Contact Form Processs
 router.post('/postcontact', (req, res,next) => {
