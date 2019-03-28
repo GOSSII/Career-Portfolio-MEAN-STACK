@@ -1,0 +1,40 @@
+<% include ../partials/header.ejs %>
+
+<!-- Content for the Add Page -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <h1><%= title %></h1>
+            <!-- form.form>div.form-group>label+input.form-controls#FirstNameTextField -->
+            <form action="" class="form" method="POST">
+                <div class="form-group">
+                    <label for="FirstNameTextField">First Name</label>
+                    <input type="text" class="form-control"
+                     id="FirstNameTextField" name="FirstNameTextField" required placeholder="Enter First Name">
+                </div>
+
+                <div class="form-group">
+                        <label for="LastNameTextField">Last Name</label>
+                        <input type="text" class="form-control"
+                         id="LastNameTextField" name="LastNameTextField" required placeholder="Enter Last Name">
+                </div>
+
+                <div class="form-group">
+                        <label for="AgeTextField">Age</label>
+                        <input type="text" class="form-control"
+                            id="AgeTextField" name="AgeTextField" required placeholder="Enter Age">
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-check-square" aria-hidden="true"> Submit</i></button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<% include ../partials/footer.ejs %>
