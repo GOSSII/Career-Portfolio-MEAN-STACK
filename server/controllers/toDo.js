@@ -22,7 +22,8 @@ module.exports.displayToDoList = (req, res, next) => {
 
 module.exports.displayAddPage = (req, res, next) => {
     res.render('todo/add', {
-        title: 'Add New ToDO Item'
+        title: 'Add New ToDO Item',
+        displayName: req.user ? req.user.displayName : ""
     });
 }
 
