@@ -69,6 +69,14 @@ Date 16, Feb 2019
       <% } %>
                 <a class="nav-link" href="/contact"><i class="fa fa-lg fa-headset"></i> Contact</a>
         </li>
+
+        <% if (title == "ToDo") { %>
+          <li class="nav-item active">
+        <% } else { %>
+        <li class="nav-item">
+        <% } %>
+                  <a class="nav-link" href="/todo"><i class="fa fa-lg fa-headset"></i> ToDo</a>
+          </li>
     </div>
   </nav>
   <!-- Header End -->

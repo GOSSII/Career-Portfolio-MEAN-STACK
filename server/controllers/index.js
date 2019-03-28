@@ -21,3 +21,7 @@ module.exports.displayContactPage = (req, res, next) => {
   res.render('contact/index', { title: 'Contact' });
 }
 
+module.exports.displayToDoPage = (req, res, next) => {
+  res.render('todo/index', { title: 'todo' });
+}
+

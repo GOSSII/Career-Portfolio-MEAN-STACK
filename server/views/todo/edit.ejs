@@ -1,0 +1,53 @@
+<% include ../partials/header.ejs %>
+
+<!-- Content for the Add Page -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="TaskTextField">Task</label>
+                    <input type="text" class="form-control" 
+                    id="TaskTextField" 
+                    placeholder="Enter Task Name"
+                    name="TaskName"
+                    value="<%= todo.task %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="DescriptionTextField">Description</label>
+                    <input type="text" class="form-control" 
+                    id="DescriptionTextField" 
+                    placeholder="Enter Description"
+                    name="Desc"
+                    value="<%= todo.desc %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="IscompletedField">Iscompleted</label>
+                    <input type="text" class="form-control" 
+                    id="IscompletedField" 
+                    placeholder="Enter Iscompleted"
+                    name="completed"
+                    value="<%= todo.completed %>"
+                    required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                <i class="fas fa-edit"></i> Submit</button>
+                <a href="/todo" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel</a>
+            </form>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<% include ../partials/footer.ejs %>

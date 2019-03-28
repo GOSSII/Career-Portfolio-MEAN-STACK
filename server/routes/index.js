@@ -5,6 +5,7 @@
 let express = require('express');
 let router = express.Router();
 let indexController = require('../controllers/index');
+let tDoController = require('../controllers/toDo');
 
 /* GET home page. */
 router.get('/', indexController.displayHomePage );
@@ -16,5 +17,8 @@ router.get('/projects', indexController.displayProjectPage );
 router.get('/services', indexController.displayServicesPage );
 
 router.get('/contact', indexController.displayContactPage);
+
+/* GET contact page. */
+router.get('/todo', tDoController.displayToDoList);
 
 module.exports = router;
