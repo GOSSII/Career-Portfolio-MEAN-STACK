@@ -12,7 +12,8 @@ module.exports.displayToDoList = (req, res, next) => {
         else {
             res.render('todo/index', {
                 title: 'ToDo List',
-                toDoList: toDoList
+                toDoList: toDoList,
+                displayName: req.user ? req.user.displayName : ""
             });
         }
     });
@@ -57,7 +58,8 @@ module.exports.displayEditPage = (req, res, next) => {
             // show the edit view
             res.render('todo/edit', {
                 title: 'Edit Contact',
-                todo: ToDOObject
+                todo: ToDOObject,
+                displayName: req.user ? req.user.displayName : ""
             });
         }
     });
