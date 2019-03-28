@@ -1,0 +1,4 @@
+npm install express-session passport passport-local passport-local-mongoose connect-flash --save
+
+// Type Defination 
+npm i @types/express-session @types/passport @types/passport-local @types/passport-local-mongoose @types/connect-flash --save-dev

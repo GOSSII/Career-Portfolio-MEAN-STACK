@@ -2,11 +2,19 @@
 // Id: 300984229 
 // Date 16, Feb 2019 
 
+// moddules for node and express
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+
+// modules for authentication
+let session = require('express-session');
+let passport = require('passport');
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy;
+let flash = require('connect-flash');
 
 // Database Setup
 let mongoose = require("mongoose");
@@ -41,6 +49,28 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
+
+// setup express-session
+app.use(session({
+  secret: "TomRocks",
+  saveUninitialized: false,
+  resave: false
+}));
+
+// initialize flash
+app.use(flash());
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// pasport user configuration
+
+// create a User model
+
+// implement a User authetication strategy
+
+// serialize and deserialize the User info
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
