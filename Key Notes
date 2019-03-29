@@ -2,3 +2,8 @@ npm install express-session passport passport-local passport-local-mongoose conn
 
 // Type Defination 
 npm i @types/express-session @types/passport @types/passport-local @types/passport-local-mongoose @types/connect-flash --save-dev
+
+
+npm i cors jsonwebtoken passport-jwt --save
+
+npm i @types/cors @types/jsonwebtoken @types/passport-jwt --save-dev

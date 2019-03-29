@@ -8,6 +8,11 @@
     function Start(){
         console.log("%c App Started..")
     }
-
+    $(".btn-danger").click(function(event) {
+        if(!confirm("Are you sure???")) {
+            event.preventDefault();
+            window.location.assign("/contact-list");
+        }
+    });
     window.addEventListener("load",Start);
 })();

@@ -1,47 +1,51 @@
 let express = require('express');
 let router = express.Router();
+let jwt = require('jsonwebtoken');
 
 // create a reference to the db schema
-let contactModel = require('../models/toDo');
+let TODOModel = require('../models/toDo');
 
 module.exports.displayToDoList = (req, res, next) => {
-    contactModel.find((err, toDoList) => {
+    TODOModel.find((err, toDoList) => {
         if (err) {
             return console.error(err);
         }
         else {
-            res.render('todo/index', {
-                title: 'ToDo List',
-                toDoList: toDoList,
-                displayName: req.user ? req.user.displayName : ""
-            });
+            // res.render('todo/index', {
+            //     title: 'ToDo List',
+            //     toDoList: toDoList,
+            //     displayName: req.user ? req.user.displayName : ""
+            // });
+            res.json({success: true, msg: 'ToDo List Displayed Successfully', toDoList: toDoList, user: req.user});
         }
     });
 };
 
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('todo/add', {
-        title: 'Add New ToDO Item',
-        displayName: req.user ? req.user.displayName : ""
-    });
+    // res.render('todo/add', {
+    //     title: 'Add New ToDO Item',
+    //     displayName: req.user ? req.user.displayName : ""
+    // });
+    res.json({success: true, msg: 'Successfully Displayed Add Page'});
 }
 
 
 module.exports.processAddPage = (req, res, next) => {
 
-    let newToDO = contactModel({
-        "task": req.body.TaskName,
-        "desc": req.body.Desc
+    let newToDO = TODOModel({
+        task: req.body.TaskName,
+        desc: req.body.Desc
     });
 
-    contactModel.create(newToDO, (err, contactModel) => {
+    TODOModel.create(newToDO, (err, contactModel) => {
         if(err) {
             console.log(err);
             res.end(err);
         }
         else {
-            res.redirect('/todo');
+            // res.redirect('/todo');
+            res.json({success: true, msg: 'Successfully Added New Task'});
         }
     });
 }
@@ -49,7 +53,7 @@ module.exports.processAddPage = (req, res, next) => {
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
 
-    contactModel.findById(id, (err, ToDOObject) => {
+    TODOModel.findById(id, (err, ToDOObject) => {
         if(err) {
             console.log(err);
             res.end(err);
@@ -57,11 +61,12 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             // show the edit view
-            res.render('todo/edit', {
-                title: 'Edit Contact',
-                todo: ToDOObject,
-                displayName: req.user ? req.user.displayName : ""
-            });
+            // res.render('todo/edit', {
+            //     title: 'Edit Contact',
+            //     todo: ToDOObject,
+            //     displayName: req.user ? req.user.displayName : ""
+            // });
+            res.json({success: true, msg: 'Successfully Displayed Task to Edit', todo: ToDOObject});
         }
     });
 }
@@ -69,21 +74,22 @@ module.exports.displayEditPage = (req, res, next) => {
 module.exports.processEditPage = (req, res, next) => {
     let id = req.params.id;
 
-    let updatedContact = contactModel({
-        "_id": id,
-        "task": req.body.TaskName,
-        "desc": req.body.Desc,
-        "completed": req.body.completed
+    let updatedContact = TODOModel({
+        _id: id,
+        task: req.body.task,
+        desc: req.body.desc,
+        completed: req.body.completed
     });
 
-    contactModel.update({_id: id}, updatedContact, (err) => {
+    TODOModel.update({_id: id}, updatedContact, (err) => {
         if(err) {
             console.log(err);
             res.end(err);
         }
         else {
             // refresh the contact list
-            res.redirect('/todo');
+            //  res.redirect('/todo');
+            res.json({success: true, msg: 'Successfully Edited Task', contact: updatedContact});
         }
     })
 }
@@ -91,14 +97,15 @@ module.exports.processEditPage = (req, res, next) => {
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
 
-    contactModel.remove({_id: id}, (err) => {
+    TODOModel.remove({_id: id}, (err) => {
         if(err) {
             console.log(err);
             res.end(err);
         }
         else {
             // refresh the contact list
-            res.redirect('/todo');
+            //  res.redirect('/todo');
+            res.json({success: true, msg: 'Successfully Deleeted Task'});
         }
     });
 }

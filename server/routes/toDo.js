@@ -13,22 +13,22 @@ function requireAuth(req, res, next) {
 }
 
 /* GET Contact List page - READ Operation */
-router.get('/', requireAuth, toDoController.displayToDoList);
+router.get('/',  toDoController.displayToDoList);
 
 /* GET Route for the Add page 
    this will display the Add page */
-router.get('/add', requireAuth, toDoController.displayAddPage);
+router.get('/add',  toDoController.displayAddPage);
 
 /* POST Route for processing the Add page */
-router.post('/add', requireAuth, toDoController.processAddPage);
+router.post('/add',  toDoController.processAddPage);
 
 /* GET request - display the Edit page */
-router.get('/edit/:id', requireAuth, toDoController.displayEditPage);
+router.get('/edit/:id',  toDoController.displayEditPage);
 
 // /* POST request - Update the database with data from the Edit Page */
-router.post('/edit/:id', requireAuth, toDoController.processEditPage);
+router.post('/edit/:id',  toDoController.processEditPage);
 
 // /* GET request to perform the delete action */
-router.get('/delete/:id', requireAuth, toDoController.performDelete);
+router.get('/delete/:id',  toDoController.performDelete);
 
 module.exports = router;
