@@ -12,7 +12,7 @@ export class AuthService {
   private authToken: any;
 
   //  private endpoint = 'http://localhost:3000/api/';
-  private endpoint = 'https://career-portfolio-mean-stack.herokuapp.com/api';
+  private endpoint = 'https://career-portfolio-mean-stack.herokuapp.com/api/';
 
   private httpOptions = {
     headers: new HttpHeaders({
