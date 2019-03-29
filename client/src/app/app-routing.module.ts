@@ -1,3 +1,10 @@
+/* 
+Project: Career-Portfolio-MEAN-STACK    
+Name: Dipeshpuri Goswami
+Id: 300984229 
+Date 29, March 2019 
+*/
+
 // Modules
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';

@@ -1,9 +1,19 @@
-<app-base-page></app-base-page>>
+<!-- 
+Project: Career-Portfolio-MEAN-STACK    
+Name: Dipeshpuri Goswami
+Id: 300984229 
+Date 29, March 2019 
+-->
+
 <div *ngIf="isLoggedIn()" class="container">
+  <br>
   <div class="row">
-    <div class="col col-md-6">
+    <div class="col col-md-5">
+      <h1 class="display-5">Admin Dashboard</h1>
+    </div>
+    <div class="col-md-7">
       <div class="card">
-        <h5 class="card-header alert-success">Secure</h5>
+        <h5 class="card-header alert-success">Secure Area For Admin</h5>
         <div class="card-body">
           <a routerLink="contact-list" class="btn btn-primary"><i class="fas fa-users fa-lg"></i> Todo List</a>
         </div>
@@ -11,3 +21,76 @@
     </div>
   </div>
 </div>
+
+<div class="wrapper">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="main">
+      <h1 *ngIf="!isLoggedIn()" class="display-5">Contact</h1>
+      <div class="row">
+        <div class="col-md-5">
+          <div class="card">
+
+            <div class="cord_wrapper">
+              <div class="contact_img" style="float:left;">
+                <img src="assets/portfolio/contact1.png" class="img img-resonsive" style="height:50px; width:50px">
+              </div>
+              <div class="contact_title" style="display:inline;">
+                <strong>START A PROJECT</strong>
+                <h3><strong style="color: rgb(68, 52, 46);">911@DipsGoswami.in</strong></h3>
+              </div>
+            </div>
+
+            <div class="cord_wrapper">
+              <div class="contact_img" style="float:left;">
+                <img src="assets/portfolio/contact2.png" class="img img-resonsive" style="height:50px; width:50px">
+              </div>
+              <div class="contact_title" style="display:inline;">
+                <strong>CONTACT ME</strong>
+                <h3><strong style="color: rgb(68, 52, 46);">+1 6 4 7 8 0 3 2 0 6 0</strong></h3>
+              </div>
+            </div>
+
+            <div class="cord_wrapper">
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <form method="POST" action="/contact/postcontact" accept-charset="utf-8">
+            <div class="modal-body" style="padding: 5px;">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                  <input class="form-control" name="firstname" placeholder="Firstname" type="text" required autofocus />
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                  <input class="form-control" name="lastname" placeholder="Lastname" type="text" required />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                  <input class="form-control" name="email" placeholder="E-mail" type="text" required />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                  <input class="form-control" name="subject" placeholder="Subject" type="text" required />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <textarea style="resize:vertical;" class="form-control" placeholder="Message..." rows="6"
+                    name="comment" required></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer" style="margin-bottom:-14px;">
+              <input type="submit" class="btn btn-md btn-success" value="Send" />
+
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>

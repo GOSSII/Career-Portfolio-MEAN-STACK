@@ -1,1 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+/* 
+Project: Career-Portfolio-MEAN-STACK    
+Name: Dipeshpuri Goswami
+Id: 300984229 
+Date 29, March 2019 
+*/
+
+/* Custome CSS goes here */
+/* Global CSS */
+.navbar{
+    padding: 0 40px 0 30px;
+}
+.jumbotron {
+  padding-top: 0px;
+  background-color: #fff;
+}
+.main {
+  padding: 2% 5% 5% 5%;
+  text-align: justify;
+}
+
+/* Service Page CSS */
+.card {
+  background-color: #fee151;
+  height: 100%;
+}
+.card .fa,
+.card .fab,
+.card .fas {
+  font-size: 30px !important;
+  float: left !important;
+  font-weight: 900 !important;
+}
+.service-info {
+  padding-left: 40px;
+}
+
+/* Project Page CSS */
+.project .card {
+  background-color: #fff;
+}
+.project .card-header {
+  background-color: #fee151;
+}
+.project img {
+  width: 100%;
+}
+.backToProject {
+  float: right;
+}
+
+/* Contact Page CSS */
+.cord_wrapper {
+  padding: 10px;
+}
+.cord_wrapper .contact_title {
+  padding-left: 10px;
+}
