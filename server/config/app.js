@@ -107,6 +107,9 @@ app.use("/api/projects",projectsRouter);
 app.use('/api/contact',contactRouter);
 app.use("/api/todo",toDoRouter);
 
+app.get('*', (req, res) => {
+  res.sendfile(path.join(__dirname, '../../public/index.html'));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

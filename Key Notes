@@ -7,3 +7,11 @@ npm i @types/express-session @types/passport @types/passport-local @types/passpo
 npm i cors jsonwebtoken passport-jwt --save
 
 npm i @types/cors @types/jsonwebtoken @types/passport-jwt --save-dev
+
+npm i @angular/cli -g
+
+npm install bootstrap @fortawesome/fontawesome-free @ng-bootstrap/ng-bootstrap angular2-flash-messages @auth0/angular-jwt jquery popper.js --save 
+
+npm install @types/bootstrap @types/jquery --save-dev
+
+npm uninstall @auth0/angular-jwt @ng-bootstrap/ng-bootstrap angular2-flash-messages bootstrap @fortawesome/fontawesome-free jquery popper.js --save
