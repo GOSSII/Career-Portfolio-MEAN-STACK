@@ -13,7 +13,8 @@ export class ContactListService {
   private user: User;
   private authToken: any = null;
 
-  private endpoint = 'http://localhost:3000/api/todo/';
+  //  private endpoint = 'http://localhost:3000/api/todo/';
+  private endpoint = 'https://career-portfolio-mean-stack.herokuapp.com/api/todo';
 
   private httpOptions = {
     headers: new HttpHeaders({
