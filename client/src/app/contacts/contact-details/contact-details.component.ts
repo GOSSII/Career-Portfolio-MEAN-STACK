@@ -41,7 +41,7 @@ export class ContactDetailsComponent implements OnInit {
     });
   }
 
-  private onDetailsPageSubmit(): void {
+  onDetailsPageSubmit(): void {
     switch (this.title) {
       case 'Add Todo':
       console.log("data", this.contact);
