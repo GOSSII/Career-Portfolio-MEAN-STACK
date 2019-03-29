@@ -26,9 +26,9 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^5.0.1"
   },
-  "description": "Mongo and Mongoose Demo",
+  "description": "Career-Portfolio-MEAN-STACK",
   "main": "server.js",
-  "author": "Tom Tsiliopoulos",
+  "author": "Dipesh Goswami",
   "license": "ISC",
   "devDependencies": {
     "@types/body-parser": "^1.17.0",
@@ -48,10 +48,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CentennialCollege/COMP308-W2019-Lesson9B.git"
+    "url": "git+https://github.com/GOSSII/Career-Portfolio-MEAN-STACK.git"
   },
   "bugs": {
-    "url": "https://github.com/CentennialCollege/COMP308-W2019-Lesson9B/issues"
+    "url": "https://github.com/GOSSII/Career-Portfolio-MEAN-STACK/issues"
   },
-  "homepage": "https://github.com/CentennialCollege/COMP308-W2019-Lesson9B#readme"
+  "homepage": "https://github.com/GOSSII/Career-Portfolio-MEAN-STACK#readme"
 }

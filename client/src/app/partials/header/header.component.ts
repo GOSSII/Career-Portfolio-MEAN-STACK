@@ -32,7 +32,11 @@ export class HeaderComponent implements OnInit {
   }
 
   isLoggedIn(): boolean {
-    return this.authService.loggedIn();
+    let result = this.authService.loggedIn();
+    if(result) {
+      this.user = JSON.parse(localStorage.getItem('user'));
+    }
+    return result;
   }
 
 }

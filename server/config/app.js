@@ -105,7 +105,7 @@ app.use('/api', indexRouter);
 app.use('/api/users', usersRouter);
 app.use("/api/projects",projectsRouter);
 app.use('/api/contact',contactRouter);
-app.use("/api/todo",toDoRouter);
+app.use("/api/todo", passport.authenticate('jwt', {session: false}), toDoRouter);
 
 app.get('*', (req, res) => {
   res.sendfile(path.join(__dirname, '../../public/index.html'));
