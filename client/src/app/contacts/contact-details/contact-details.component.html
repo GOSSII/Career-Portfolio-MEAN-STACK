@@ -1,0 +1,50 @@
+ <!-- Content for the Details Page -->
+<div class="container">
+  <div class="row">
+      <div class="col-md-offset-3 col-md-6">
+          <h1>{{ title }}</h1>
+
+          <form class="form" (submit)="onDetailsPageSubmit()">
+              <div class="form-group">
+                  <label for="FirstNameTextField">task</label>
+                  <input type="text" class="form-control"
+                  id="FirstNameTextField"
+                  placeholder="Enter Task"
+                  name="firstName"
+                  [(ngModel)]="contact.task"
+                  value="{{ contact.task }}"
+                  required>
+              </div>
+
+              <div class="form-group">
+                  <label for="LastNameTextField">Description</label>
+                  <input type="text" class="form-control"
+                  id="LastNameTextField"
+                  placeholder="Enter Description"
+                  name="lastName"
+                  [(ngModel)]="contact.desc"
+                  value="{{ contact.desc }}"
+                  required>
+              </div>
+
+              <div class="form-group">
+                  <label for="AgeTextField">Iscompleted</label>
+                  <input type="text" class="form-control"
+                  id="AgeTextField"
+                  placeholder="Enter Iscompleted"
+                  name="age"
+                  [(ngModel)]="contact.completed"
+                  value="{{ contact.completed }}"
+                  required>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+              <i class="fas fa-edit"></i> {{ title }}</button>
+              <a routerLink="/contact/contact-list" class="btn btn-warning">
+                  <i class="fas fa-undo"></i> Cancel</a>
+          </form>
+
+
+      </div>
+  </div>
+</div>

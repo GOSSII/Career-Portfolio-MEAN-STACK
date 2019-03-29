@@ -34,8 +34,9 @@ module.exports.displayAddPage = (req, res, next) => {
 module.exports.processAddPage = (req, res, next) => {
 
     let newToDO = TODOModel({
-        task: req.body.TaskName,
-        desc: req.body.Desc
+        task: req.body.task,
+        desc: req.body.desc,
+        completed: req.body.completed
     });
 
     TODOModel.create(newToDO, (err, contactModel) => {
